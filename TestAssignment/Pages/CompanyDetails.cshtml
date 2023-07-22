@@ -1,0 +1,198 @@
+﻿@page "{id?}"
+@model TestAssignment.Pages.CompanyDetailsModel
+@{
+    ViewData["Title"] = "Comapny Details";
+}
+
+<div class="title">
+    <h6>@ViewData["Title"]</h6> 
+    <p>@Model.company?.Name</p>
+</div>
+<div class="detail-group">
+    <section>
+        <div class="detail-item">
+        <div class="hat">
+            <div class="caption">
+                <h6 class="caption">Info</h6>
+            </div>
+            <div class="toolbar">
+                <i role="button" class="bi bi-check-lg"></i>
+            </div>
+        </div>
+        <form method="post">
+            <div class="form-group">
+                <div class="col-25">
+                <label asp-for="InputCompany.Id" >ID:</label>
+                </div>
+                <div class="col-75">
+                <input asp-for="InputCompany.Id" value="@Model.company.CompanyId" type="text"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-25">
+                <label asp-for="InputCompany.Name">Name:</label>
+                </div>
+                <div class="col-75">
+                <input asp-for="InputCompany.Name" value="@Model.company.Name" type="text"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-25">
+                <label asp-for="InputCompany.Address">Address:</label>
+                </div>
+                <div class="col-75">
+                <input asp-for="InputCompany.Address" value="@Model.company.Address" type="text"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-25">
+                <label asp-for="InputCompany.City">City:</label>
+                </div>
+                <div class="col-75">
+                <input asp-for="InputCompany.City" value="@Model.company.City" type="text"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-25">
+                <label for="State">State:</label>
+                </div>
+                <div class="col-75">
+                <input name="State" id="State" value="@Model.company.State" type="text"/>
+                </div>
+            </div>
+        </form>
+        </div>
+    </section>
+    <section>
+        <div class="detail-item">
+        <div class="hat">
+        <div class="caption">
+            <h6>History</h6>
+        </div>
+        <div class="toolbar">
+            <i role="button" id="refresh-orders" class="bi bi-arrow-repeat"></i>
+        </div>
+    </div>
+    <div class="table">
+    <table class="history-table">
+        <thead>
+            <tr>
+                <th>Order Date</th>
+                <th>Store City</th>
+            </tr>
+        </thead>
+        <tbody id="orders-tbody">
+
+        </tbody>
+    </table>
+    </div>
+    </div>
+    </section>
+    <section>
+        <div class="detail-item">
+        <div class="hat">
+        <div class="caption">
+            <h6>Notes</h6>
+        </div>
+        <div class="toolbar">
+            <i role="button" class="bi bi-plus-lg"></i>
+            <i role="button" class="bi bi-trash-fill"></i>
+            <i role="button" id="refresh-notes" class="bi bi-arrow-repeat"></i>
+        </div>
+    </div>
+    <div class="table">
+    <table id="notes-table">
+        <thead>
+            <tr>
+                <th>Invoice Number</th>
+                <th>Employee</th>
+            </tr>
+        </thead>
+        <tbody id="notes-tbody">
+            
+        </tbody>
+    </table>
+    </div>
+    </div>
+    </section>
+    <section>
+        <div class="detail-item">
+        <div class="hat">
+        <div class="caption">
+            <h6>Employees</h6>
+        </div>
+        <div class="toolbar">
+            <i role="button" class="bi bi-plus-lg"></i>
+            <i role="button" class="bi bi-pencil-fill"></i>
+            <i role="button" id="refresh-employees" class="bi bi-arrow-repeat"></i>
+        </div>
+    </div>
+    <div class="table">
+    <table id="employees-table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody id="employees-tbody">
+            
+        </tbody>
+    </table>
+    </div>
+    </div>
+    <div class="detail-item">
+        <div class="hat">
+            <div class="toolbar">
+                <i role="button" class="bi bi-pencil-fill"></i>
+                <i role="button" class="bi bi-trash-fill"></i>
+            </div>
+        </div>
+        <form id="employee-form" method="post">
+            <div class="form-group">
+                <div class="col-25">
+                <label asp-for=InputEmployee.FirstName >First Name:</label>
+                </div>
+                <div class="col-75">
+                <input asp-for=InputEmployee.FirstName  value="" type="text"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-25">
+                <label asp-for=InputEmployee.LastName>Last Name:</label>
+                </div>
+                <div class="col-75">
+                <input asp-for="InputEmployee.LastName" value="" type="text"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-25">
+                <label asp-for="InputEmployee.Title">Title:</label>
+                </div>
+                <div class="col-75">
+                <input asp-for="InputEmployee.Title"  value="" type="text"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-25">
+                <label asp-for="InputEmployee.BirthDate">Birth Date:</label>
+                </div>
+                <div class="col-75">
+                <input class="date" asp-for="InputEmployee.BirthDate" value=""/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-25">
+                <label asp-for="InputEmployee.Position">Position:</label>
+                </div>
+                <div class="col-75">
+                <input asp-for="InputEmployee.Position" value="" type="text"/>
+                </div>
+            </div>
+        </form>
+        </div>
+    </section>
+</div>
+@section Details {
+    <partial name="_DetailScripts"/>
+}

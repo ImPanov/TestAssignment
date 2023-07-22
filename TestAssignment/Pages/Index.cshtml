@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Companies";
+}
+<section>
+    <div class="hat">
+        <div class="caption">
+            <h6 >@ViewData["Title"]</h6>
+        </div>
+        <div class="toolbar">
+            <i role="button" class="bi bi-plus-lg"></i>
+            <i role="button" class="bi bi-pencil-fill"></i>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Company Name</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var company in Model.Companies)
+            {
+                <tr>
+                    <td><a asp-page="/CompanyDetails" asp-route-id="@company.CompanyId">@company.Name</a></td>
+                    <td>@company.City</td>
+                    <td>@company.State</td>
+                    <td>@company.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

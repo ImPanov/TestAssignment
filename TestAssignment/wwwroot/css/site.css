@@ -1,0 +1,125 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+.hat {
+    display: flex;
+    align-items: baseline;
+}
+.toolbar {
+    margin-left:auto;
+}
+th, td {
+    padding: 8px;
+}
+
+table {
+    border: 2px solid #a7a7a7;
+    width: 100%;
+}
+td {
+    border-right: 2px solid #a7a7a7;
+}
+tr {
+    border: none;
+}
+.title {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+#notes-tbody tr td:first-child {
+    text-align: right;
+}
+
+.table {
+    overflow-y: auto;
+    max-height: 100%;
+}
+.table thead  {
+    background-color:white;
+    position: sticky;
+    top: 0px;
+    z-index:1;
+}
+table tr th {
+    outline: 2px solid #a7a7a7;
+    outline-offset: -1px;
+    color: lightgray;
+    font-weight: 400;
+}
+.col-25 {
+    float: left;
+    width: 25%;
+}
+.col-75 {
+    float: left;
+    width: 75%;
+}
+.detail-group, .detail-group section {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.detail-group section {
+    border-top: 1px solid #a7a7a7;
+    border-bottom: 1px solid #a7a7a7;
+    width: fit-content;
+}
+.detail-item {
+    display: grid;
+    grid-template-rows: min-content auto;
+    row-gap: 10px;
+    width: 300px;
+    height: 350px;
+}
+input[type=text], input[type=date] {
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #a7a7a7;
+    width: 100%;
+}
+input {
+    margin-bottom: 10px;
+}
+label {
+    display: inline-block;
+    padding: 12px 12px 12px 0;
+}
+.bi {
+    font-size: 1.5rem;
+}
+#employee-form {
+    font-size: 12px
+}
+
+.date {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-calendar-event' viewBox='0 0 16 16'> <path d='M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z'/> <path d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/> </svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    cursor: pointer;
+}
+i[role=button] {
+    cursor:pointer;
+}
+form {
+    display: inline-block;
+}
